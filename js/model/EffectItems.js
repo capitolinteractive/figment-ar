@@ -47,15 +47,7 @@ var EffectItems = [
     "name": "effect_bubbles",
     "key": "effect_bubbles",
   },
-  {
-    "effect": getFireWorks,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_NONE,
-    "icon_img":require("../res/icon_effects_fireworks.png"),
-    "selected": false,
-    "name": "effect_fireworks",
-    "key": "effect_fireworks",
-  },
+
   {
     "effect": getSmoke,
     "loading": LoadingConstants.NONE,
@@ -66,54 +58,7 @@ var EffectItems = [
     "key": "effect_smoke",
 
   },
-  {
-    "effect": getGrayScale,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_GRAYSCALE,
-    "icon_img":require("../res/icon_effects_bw.png"),
-    "selected": false,
-    "name": "effect_black_white",
-  },
-  {
-    "effect": getSepia,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_SEPIA,
-    "icon_img":require("../res/icon_effects_sepia.png"),
-    "selected": false,
-    "name": "effect_sepia",
-  },
-  {
-    "effect": getThermal,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_THERMAL,
-    "icon_img":require("../res/icon_effects_thermal.png"),
-    "selected": false,
-    "name": "effect_thermal",
-  },
-  {
-    "effect": getSinCity,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_SINCITY,
-    "icon_img":require("../res/icon_effects_spotcolor.png"),
-    "selected": false,
-    "name": "effect_sincity",
-  },
-  {
-    "effect": getBarrel,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_BARREL_DISTORT,
-    "icon_img":require("../res/icon_effects_barreldistort.png"),
-    "selected": false,
-    "name": "effect_barrel_distort",
-  },
-  {
-    "effect": getPinCushion,
-    "loading": LoadingConstants.NONE,
-    "postProcessEffects": EffectsConstants.EFFECT_PINCUSHION_DISTORT,
-    "icon_img":require("../res/icon_effects_pincushion.png"),
-    "selected": false,
-    "name": "effect_pincushion",
-  },
+  
 ]
 
 module.exports = {

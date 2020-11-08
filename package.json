@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "babel-jest": "latest",
-    "metro-react-native-babel-preset": "latest",
     "jest": "latest",
+    "metro-react-native-babel-preset": "latest",
     "react-test-renderer": "latest"
   }
 }

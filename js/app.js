@@ -393,7 +393,7 @@ _renderShareScreen() {
         </View>
 
         {/* Button to save media to camera roll */}
-        <View style={{position:'absolute', left:20, bottom:20, width:40, height:40}}>
+        <View style={{position:'absolute', left:30, bottom:20, width:50, height:50}}>
           <ShareScreenButton onPress={()=>{this._saveToCameraRoll()}}
           buttonState={this.state.haveSavedMedia ? 'on': 'off'}
           stateImageArray={[require("./res/btn_saved.png"), require("./res/btn_save.png")]} 
@@ -408,10 +408,10 @@ _renderShareScreen() {
         )}
 
         {/* Share button -> Opens Share Action Sheet to enable user to share media to their social media destination of choice */}
-        <View style={{position:'absolute', left:85, bottom:20, width:40, height:40}}>
+        <View style={{position:'absolute', right:30, bottom:20, width:50, height:50}}>
          <ShareScreenButton onPress={()=>{this._openShareActionSheet()}}
           buttonState={'off'}
-          stateImageArray={[require("./res/btn_share.png"), require("./res/btn_share.png")]}
+          stateImageArray={[require("./res/btn_share1.png"), require("./res/btn_share1.png")]}
           style={localStyles.previewScreenButtonShare} />
         </View>
       </View>
@@ -424,31 +424,17 @@ _renderShareScreen() {
 _renderButtonLeftMenu() {
   var buttons = [];
   // Portal mode button
-  buttons.push(
-      <ButtonComponent key="button_portals"
-        onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_PORTAL, UIConstants.LIST_TITLE_PORTALS)}}
-        buttonState={(this.props.listMode==UIConstants.LIST_MODE_PORTAL) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_portals_on.png"), require("./res/btn_mode_portals.png")]}
-        style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_PORTAL)}
-        />);
+
 
   // Effect mode button
   buttons.push(
       <ButtonComponent key="button_effects"
         onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_EFFECT, UIConstants.LIST_TITLE_EFFECTS)}}
         buttonState={(this.props.listMode==UIConstants.LIST_MODE_EFFECT) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_effects_on.png"), require("./res/btn_mode_effects.png")]}
+        stateImageArray={[require("./res/btn_mode_effects_on1.png"), require("./res/btn_mode_effects1.png")]}
         style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_EFFECT)}
         />);
 
-  // Objects mode button
-  buttons.push(
-      <ButtonComponent key="button_models"
-          onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_MODEL, UIConstants.LIST_TITLE_MODELS)}}
-          buttonState={(this.props.listMode==UIConstants.LIST_MODE_MODEL) ? 'on':'off'}
-          stateImageArray={[require("./res/btn_mode_objects_on.png"), require("./res/btn_mode_objects.png")]}
-          style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_MODEL)}
-          />);
 
   // Show these buttons only if we are in main screen or while recording -> Buttons not rendered when in share screen or when manipulating individual portals
   if(this.props.currentScreen == UIConstants.SHOW_MAIN_SCREEN || this.props.currentScreen == UIConstants.SHOW_RECORDING_SCREEN) {
@@ -657,11 +643,7 @@ _onItemClickedInScene(index, clickState, itemType) {
 
 // Load data source for listview based on listview modes
 _getListItems() {
-  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
-    return this._constructListArrayModel(ModelData.getModelArray(), this.props.modelItems);
-  }else if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-    return this._constructListArrayModel(PortalData.getPortalArray(), this.props.portalItems);
-  } else if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
+  if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
     return this.props.effectItems;
   }
 }
@@ -782,6 +764,8 @@ var localStyles = StyleSheet.create({
     position : 'absolute',
     height: 58,
     width: 58,
+    top: -600,
+    right: -300,
   },
     recordIcon: {
     position : 'absolute',
